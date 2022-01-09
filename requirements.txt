@@ -1,1 +1,8 @@
-boto3==1.18.41
+pip
+pytest
+wheel
+twine
+setuptools
+keyring
+build
+artifacts-keyring
