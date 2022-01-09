@@ -28,3 +28,10 @@ steps:
     pip install pytest pytest-azurepipelines
     python3 -m pytest tests/
   displayName: 'pytest'
+
+- task: TwineAuthenticate@1
+  inputs:
+    artifactFeed: public-test/test-feed
+
+- script: |
+    python -m twine upload -r test-feed --config-file $(PYPIRC_PATH) dist/*
